@@ -215,6 +215,7 @@ ifdef CONFIG_CPU_IDLE
 endif
 
 ifdef CONFIG_BT
+	obj-$(CONFIG_MACH_DELUXE_UB1) += board-deluxe_ub1-rfkill.o  htc_bdaddress.o
 	obj-$(CONFIG_MACH_MONARUDO) += board-monarudo-rfkill.o  htc_bdaddress.o
 	obj-$(CONFIG_MACH_M7_UL) += board-m7-rfkill.o  htc_bdaddress.o htc_4335_wl_reg.o
 endif
@@ -283,12 +284,15 @@ board-8960-all-objs += board-8960.o board-8960-camera.o board-8960-display.o boa
 board-8930-all-objs += board-8930.o board-8930-camera.o board-8930-display.o board-8930-pmic.o board-8930-storage.o board-8930-gpiomux.o devices-8930.o board-8930-gpu.o
 board-8064-all-objs += board-8064.o board-8064-pmic.o board-8064-storage.o board-8064-gpiomux.o board-8064-camera.o board-8064-display.o board-8064-gpu.o
 board-elite-all-objs += board-elite.o board-elite-gpiomux.o devices-8960.o board-8960-storage.o
+board-deluxe_ub1-all-objs += board-deluxe_ub1.o board-deluxe_ub1-pmic.o board-deluxe_ub1-storage.o board-deluxe_ub1-gpiomux.o board-deluxe_ub1-keypad.o board-deluxe_ub1-wifi.o board-deluxe_ub1-audio.o
 board-monarudo-all-objs += board-monarudo.o board-monarudo-pmic.o board-monarudo-storage.o board-monarudo-gpiomux.o board-monarudo-display.o board-monarudo-gpu.o board-monarudo-keypad.o board-monarudo-wifi.o  board-monarudo-audio.o
 board-m7-all-objs += board-m7.o board-m7-pmic.o board-m7-storage.o board-m7-gpiomux.o board-m7-keypad.o board-m7-wifi.o board-m7-audio.o
 ifdef CONFIG_FB_MSM
+board-deluxe_ub1-all-objs += board-deluxe_ub1-display.o board-deluxe_ub1-gpu.o
 board-m7-all-objs += board-m7-display.o board-m7-gpu.o
 endif
 ifdef CONFIG_MSM_CAMERA
+board-deluxe_ub1-all-objs += board-deluxe_ub1-camera.o
 board-monarudo-all-objs += board-monarudo-camera.o
 board-m7-all-objs += board-m7-camera.o
 endif
@@ -308,12 +312,14 @@ obj-$(CONFIG_MACH_APQ8064_MTP) += board-8064-all.o board-8064-regulator.o
 obj-$(CONFIG_MACH_APQ8064_LIQUID) += board-8064-all.o board-8064-regulator.o
 obj-$(CONFIG_MACH_MPQ8064_HRD) += board-8064-all.o board-8064-regulator.o
 obj-$(CONFIG_MACH_MPQ8064_DTV) += board-8064-all.o board-8064-regulator.o
+obj-$(CONFIG_MACH_DELUXE_UB1) += board-deluxe_ub1-all.o board-deluxe_ub1-regulator.o
 obj-$(CONFIG_MACH_MONARUDO) += board-monarudo-all.o board-monarudo-regulator.o
 obj-$(CONFIG_MACH_M7_UL) += board-m7-all.o board-m7-regulator.o
 ifdef CONFIG_MACH_M7_UL
 obj-$(CONFIG_BT_MSM_SLEEP) += board-m7-bluesleep.o
 endif
 
+obj-$(CONFIG_MACH_DELUXE_UB1) += htc_util.o
 obj-$(CONFIG_MACH_MONARUDO) += htc_util.o
 obj-$(CONFIG_MACH_M7_UL) += htc_util.o
 obj-$(CONFIG_MACH_ELITE) += board-elite.o board-elite-regulator.o board-elite-gpiomux.o board-elite-storage.o board-elite-audio.o board-elite-camera.o

@@ -2600,6 +2600,12 @@ config MSM_HSIC_SYSMON_TEST
 	  can be read and written to send character data to the sysmon port of
 	  the modem over USB.
 
+config MACH_DELUXE_UB1
+        depends on ARCH_APQ8064
+        bool "APQ8064 DELUXE_UB1"
+        help
+          Support for the HTC APQ8064 DELUXE_UB1.
+
 config MACH_MONARUDO
 	depends on ARCH_APQ8064
 	bool "APQ8064 MONARUDO"
